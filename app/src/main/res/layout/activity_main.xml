@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.schoolonair.wallet.demo.MainViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Team A:"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView_main_teamAScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(viewModel.scoreA)}" />
+
+        <Button
+            android:id="@+id/button_main_teamAIncrement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+1 Team A" />
+
+        <Button
+            android:id="@+id/button_main_teamAIncrement10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+10 Team A" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Team B:" />
+
+        <TextView
+            android:id="@+id/textView_main_teamBScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/button_main_teamBIncrement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+1 Team B"
+            android:onClick="@{() -> viewModel.incrementScoreB()}"/>
+
+        <Button
+            android:id="@+id/button_main_finish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Finish" />
+
+    </LinearLayout>
+
+</layout>
